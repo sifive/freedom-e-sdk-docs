@@ -1,0 +1,162 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Benchmarking &#8212; Freedom E SDK v20180402-166-gc1e8371 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Creating a Standalone Project" href="standalone.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="benchmarking">
+<h1>Benchmarking<a class="headerlink" href="#benchmarking" title="Permalink to this headline">¶</a></h1>
+<p>The Dhrystone and CoreMark benchmarks are still only supported by the Legacy
+Freedom E SDK. When we port the benchmarks to Freedom Metal, we will update
+this section to describe the updated build steps.</p>
+<div class="section" id="dhrystone">
+<h2>Dhrystone<a class="headerlink" href="#dhrystone" title="Permalink to this headline">¶</a></h2>
+<p>After setting up the software and debug toolchains, you can build and
+execute everyone’s favorite benchmark as follows:</p>
+<ul class="simple">
+<li>Compile the benchmark with the command <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">software</span> <span class="pre">TARGET=freedom-e300-hifive1</span> <span class="pre">PROGRAM=dhrystone</span> <span class="pre">LINK_TARGET=dhrystone</span></code>. Note that a slightly different linker file is used for Dhrystone which stores read only data in DTIM instead of external flash.</li>
+<li>Run on the HiFive1 board with the command <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">upload</span> <span class="pre">TARGET=freedom-e300-hifive1</span> <span class="pre">PROGRAM=dhrystone</span></code>.
+This will take a few minutes.  Sample output is provided below.</li>
+<li>Compute DMIPS by dividing the Dhrystones per Second result by 1757, which
+was the VAX 11/780’s performance.  In the example below, 729927 / 1757 =
+415 DMIPS.</li>
+<li>Compute DMIPS/MHz by dividing by the clock rate: in the example below,
+415 / 268 = 1.55 DMIPS/MHz.</li>
+</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>core freq at 268694323 Hz
+
+Dhrystone Benchmark, Version 2.1 (Language: C)
+
+&lt;snip&gt;
+
+Microseconds for one run through Dhrystone: 1.3
+Dhrystones per Second:                      729927.0
+</pre></div>
+</div>
+</div>
+<div class="section" id="coremark">
+<h2>CoreMark<a class="headerlink" href="#coremark" title="Permalink to this headline">¶</a></h2>
+<p>We cannot distribute the CoreMark benchmark, but following are instructions
+to download and run the benchmark on the HiFive1 board:</p>
+<ul class="simple">
+<li>Download CoreMark from EEMBC’s web site and extract the archive from
+<a class="reference external" href="http://www.eembc.org/coremark/download.php">http://www.eembc.org/coremark/download.php</a>.</li>
+<li>Copy the following files from the extracted archive into the
+<code class="docutils literal notranslate"><span class="pre">software/coremark</span></code> directory in this repository:<ul>
+<li><code class="docutils literal notranslate"><span class="pre">core_list_join.c</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">core_main.c</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">coremark.h</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">core_matrix.c</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">core_state.c</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">core_util.c</span></code></li>
+</ul>
+</li>
+<li>Compile the benchmark with the command <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">software</span> <span class="pre">PROGRAM=coremark</span></code>.</li>
+<li>Run on the HiFive1 board with the command <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">upload</span> <span class="pre">PROGRAM=coremark</span></code>.</li>
+<li>Divide the reported Iterations/Sec by the reported core frequency in MHz to
+obtain a CoreMarks/MHz value.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Freedom E SDK</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../contents.html">Contents of the SDK</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../userguide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="installing.html">Installing Freedom E SDK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="buildingcoreip.html">Building for SiFive CoreIP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="buildingdevboard.html">Building for a Dev Board or FPGA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standalone.html">Creating a Standalone Project</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Benchmarking</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../userguide.html">User Guide</a><ul>
+      <li>Previous: <a href="standalone.html" title="previous chapter">Creating a Standalone Project</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, SiFive Inc..
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      |
+      <a href="../_sources/userguide/benchmarking.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
