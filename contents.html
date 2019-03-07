@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Contents of the SDK &#8212; Freedom E SDK v20180402-185-g1caeb4e documentation</title>
+    <title>Contents of the SDK &#8212; Freedom E SDK v20180402-247-g1a2901e documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -45,19 +45,34 @@
 <li>sifive-hifive1</li>
 </ul>
 </li>
+<li>SiFive HiFive 1 Rev B<ul>
+<li>sifive-hifive1-revb</li>
+</ul>
+</li>
 <li><a class="reference external" href="https://github.com/sifive/freedom">SiFive Freedom E310 Arty</a><ul>
 <li>freedom-e310-arty</li>
 </ul>
 </li>
-<li>SiFive CoreIP<ul>
-<li>coreip-e31</li>
-<li>coreip-s51</li>
+<li>SiFive CoreIP RTL<ul>
+<li>coreip-e20-rtl</li>
+<li>coreip-e21-rtl</li>
+<li>coreip-e24-rtl</li>
+<li>coreip-e31-rtl</li>
+<li>coreip-s51-rtl</li>
+<li>coreip-s54-rtl</li>
+<li>coreip-e76-rtl</li>
+<li>coreip-s76-rtl</li>
 </ul>
 </li>
 <li>SiFive CoreIP Arty FPGA Evaluation targets<ul>
+<li>coreip-e20-arty</li>
+<li>coreip-e21-arty</li>
 <li>coreip-e24-arty</li>
 <li>coreip-e31-arty</li>
 <li>coreip-s51-arty</li>
+<li>coreip-s54-arty</li>
+<li>coreip-e76-arty</li>
+<li>coreip-s76-arty</li>
 </ul>
 </li>
 </ul>
@@ -73,12 +88,12 @@ so that users of Freedom Metal are aware of what features and peripherals
 are available on the target.</li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">mee.h</span></code><ul>
+<li><code class="docutils literal notranslate"><span class="pre">metal.h</span></code><ul>
 <li>The Freedom Metal machine header which is used internally to Freedom Metal
 to instantiate structures to support the target device.</li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">mee.lds</span></code><ul>
+<li><code class="docutils literal notranslate"><span class="pre">metal.lds</span></code><ul>
 <li>The linker script for the target device.</li>
 </ul>
 </li>
@@ -109,8 +124,16 @@ SDK examples to be portable to all supported SiFive targets.</p>
 <h2>Example Programs<a class="headerlink" href="#example-programs" title="Permalink to this headline">¶</a></h2>
 <p>The example programs can be found under the <code class="docutils literal notranslate"><span class="pre">software/</span></code> directory.</p>
 <ul class="simple">
+<li>empty<ul>
+<li>An empty project. Serves as a good starting point for your own program.</li>
+</ul>
+</li>
 <li>hello<ul>
 <li>Prints “Hello, World!” to stdout, if a serial device is present on the target.</li>
+</ul>
+</li>
+<li>example-coreip-welcome<ul>
+<li>Prints a welcome message and interacts with the LEDs.</li>
 </ul>
 </li>
 <li>return-pass<ul>
