@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Building for SiFive CoreIP &#8212; Freedom E SDK v20180402-247-g1a2901e documentation</title>
+    <title>Building for SiFive CoreIP &#8212; Freedom E SDK v20180402-260-gd971028 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -39,22 +39,23 @@
 <div class="section" id="building-an-example">
 <h2>Building an Example<a class="headerlink" href="#building-an-example" title="Permalink to this headline">¶</a></h2>
 <p>To compile a bare-metal RISC-V program:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make <span class="o">[</span><span class="nv">PROGRAM</span><span class="o">=</span>hello<span class="o">]</span> <span class="o">[</span><span class="nv">TARGET</span><span class="o">=</span>coreip-e31-rtl<span class="o">]</span> software
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make <span class="o">[</span><span class="nv">PROGRAM</span><span class="o">=</span>hello<span class="o">]</span> <span class="o">[</span><span class="nv">TARGET</span><span class="o">=</span>coreip-e31-rtl<span class="o">]</span> <span class="o">[</span><span class="nv">CONFIGURATION</span><span class="o">=</span>debug<span class="o">]</span> software
 </pre></div>
 </div>
 <p>The square brackets in the above command indicate optional parameters for the
 Make invocation. As you can see, the default values of these parameters tell
-the build script to build the <code class="docutils literal notranslate"><span class="pre">hello</span></code> example for the <code class="docutils literal notranslate"><span class="pre">coreip-e31</span></code> target.
-If, for example, you wished to build the <code class="docutils literal notranslate"><span class="pre">timer-interrupt</span></code> example for the S51
-Core IP target, you would instead run the command</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make <span class="nv">PROGRAM</span><span class="o">=</span>timer-interrupt <span class="nv">TARGET</span><span class="o">=</span>coreip-s51-rtl software
+the build script to build the <code class="docutils literal notranslate"><span class="pre">hello</span></code> example for the <code class="docutils literal notranslate"><span class="pre">coreip-e31</span></code> target
+with the <code class="docutils literal notranslate"><span class="pre">debug</span></code> build configuration. If, for example, you wished to build
+the <code class="docutils literal notranslate"><span class="pre">timer-interrupt</span></code> example for the S51 Core IP target with the <code class="docutils literal notranslate"><span class="pre">release</span></code>
+configuration, you would instead run the command</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make <span class="nv">PROGRAM</span><span class="o">=</span>timer-interrupt <span class="nv">TARGET</span><span class="o">=</span>coreip-s51-rtl <span class="nv">CONFIGURATION</span><span class="o">=</span>release software
 </pre></div>
 </div>
 </div>
 <div class="section" id="cleaning-a-target-program-build-directory">
 <h2>Cleaning a Target Program Build Directory<a class="headerlink" href="#cleaning-a-target-program-build-directory" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">clean</span></code> target can be used to restore a target program’s directory to a clean state.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make <span class="o">[</span><span class="nv">PROGRAM</span><span class="o">=</span>hello<span class="o">]</span> <span class="o">[</span><span class="nv">TARGET</span><span class="o">=</span>coreip-e31-rtl<span class="o">]</span> clean
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make <span class="o">[</span><span class="nv">PROGRAM</span><span class="o">=</span>hello<span class="o">]</span> <span class="o">[</span><span class="nv">TARGET</span><span class="o">=</span>coreip-e31-rtl<span class="o">]</span> <span class="o">[</span><span class="nv">CONFIGURATION</span><span class="o">=</span>debug<span class="o">]</span> clean
 </pre></div>
 </div>
 </div>
