@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Installing Freedom E SDK &#8212; Freedom E SDK v201905 documentation</title>
+    <title>Installing Freedom E SDK &#8212; Freedom E SDK v201908 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -76,6 +76,17 @@ tar -xvf riscv64-unknown-elf-gcc-&lt;date&gt;-&lt;platform&gt;.tar.gz
 </pre></div>
 </div>
 </div>
+<div class="section" id="install-risc-v-qemu-4-1-0">
+<h2>Install RISC-V QEMU 4.1.0<a class="headerlink" href="#install-risc-v-qemu-4-1-0" title="Permalink to this headline">¶</a></h2>
+<p>The RISC-V QEMU Emulator is available from <a class="reference external" href="https://www.sifive.com/boards">the SiFive Website</a>.</p>
+<p>Download the .tar.gz for your platform and unpack it to your desired location.
+Then, add QEMU to your PATH:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp riscv-qemu-&lt;version&gt;-&lt;date&gt;-&lt;platform&gt;.tar.gz /my/desired/location
+tar -xvf riscv-qemu-&lt;version&gt;-&lt;date&gt;-&lt;platform&gt;.tar.gz
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/my/desired/location/riscv-qemu-&lt;version&gt;-&lt;date&gt;-&lt;platform&gt;/bin
+</pre></div>
+</div>
+</div>
 <div class="section" id="install-segger-j-link-software">
 <h2>Install Segger J-Link Software<a class="headerlink" href="#install-segger-j-link-software" title="Permalink to this headline">¶</a></h2>
 <p>Some targets supported by Freedom E SDK (like the SiFive HiFive1 Rev B) use Segger J-Link OB
@@ -130,6 +141,7 @@ git submodule update --init --recursive
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Installing Freedom E SDK</a></li>
 <li class="toctree-l2"><a class="reference internal" href="buildingdevboard.html">Building for a Dev Board or FPGA</a></li>
 <li class="toctree-l2"><a class="reference internal" href="standalone.html">Creating a Standalone Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qemusimulation.html">Simulating with QEMU</a></li>
 </ul>
 </li>
 </ul>

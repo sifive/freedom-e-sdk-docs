@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Contents of the SDK &#8212; Freedom E SDK v201905 documentation</title>
+    <title>Contents of the SDK &#8212; Freedom E SDK v201908 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -56,12 +56,20 @@
 <li>freedom-e310-arty</li>
 </ul>
 </li>
-<li><a class="reference external" href="https://github.com/sifive/riscv-qemu/tree/riscv-qemu-3.1">QEMU Emulation of the SiFive E31</a><ul>
+<li><a class="reference external" href="https://github.com/sifive/freedom-tools">QEMU Emulation of the SiFive E31</a><ul>
 <li>qemu-sifive-e31</li>
 </ul>
 </li>
-<li><a class="reference external" href="https://github.com/sifive/riscv-qemu/tree/riscv-qemu-3.1">QEMU Emulation of the SiFive S51</a><ul>
+<li><a class="reference external" href="https://github.com/sifive/freedom-tools">QEMU Emulation of the SiFive S51</a><ul>
 <li>qemu-sifive-s51</li>
+</ul>
+</li>
+<li><a class="reference external" href="https://github.com/sifive/freedom-tools">QEMU Emulation of the SiFive U54</a><ul>
+<li>qemu-sifive-u54</li>
+</ul>
+</li>
+<li><a class="reference external" href="https://github.com/sifive/freedom-tools">QEMU Emulation of the SiFive U54MC</a><ul>
+<li>qemu-sifive-u54mc</li>
 </ul>
 </li>
 </ul>
@@ -173,6 +181,52 @@ Tightly Integrated Memory (ITIM) if an ITIM is present on the target.</li>
 <li>coremark<ul>
 <li>“CoreMark” Benchmark Program that measures the performance of embedded
 microcrontrollers (MCU)</li>
+</ul>
+</li>
+<li>cflush<ul>
+<li>A simple example demo how to use cflush (Data) L1 and use FENCE to ensure flush
+complete.</li>
+</ul>
+</li>
+<li>example-rtc<ul>
+<li>Demonstrates how to use the RTC API to start a Real-Time Clock, set a compare
+value, and handle an interrupt when the clock matches the compare value.</li>
+</ul>
+</li>
+<li>example-watchdog<ul>
+<li>Demonstrates how to use the Watchdog API to set a watchdog timer to trigger an
+interrupt on timeout.</li>
+</ul>
+</li>
+<li>example-user-mode<ul>
+<li>Demonstrates how to drop to user mode privilege level.</li>
+</ul>
+</li>
+<li>example-user-syscall<ul>
+<li>Demonstrates how to register a handler for the “syscall from user mode” exception,
+drop to the user mode privilege level, and then issue a syscall.</li>
+</ul>
+</li>
+<li>plic-interrupts<ul>
+<li>A simple example demonstrating how PLIC interrupts get uses on an Arty board.</li>
+</ul>
+</li>
+<li>test-coreip<ul>
+<li>Assembly test code which executes instructions and checks for expected results.
+The tests are designed to work on SiFive CPU designs in RTL simulation or on the
+Arty FPGA board.</li>
+</ul>
+</li>
+<li>clic-vector-interrupts<ul>
+<li>A simple example demonstrating how to use CLIC non vector interrupts</li>
+</ul>
+</li>
+<li>clic-selective-vector-interrupts<ul>
+<li>A simple example demonstrating how to use CLIC selective vector interrupts</li>
+</ul>
+</li>
+<li>clic-hardware-vector-interrupts<ul>
+<li>A simple example demonstrating the use of CLIC hardware vector interrupts</li>
 </ul>
 </li>
 </ul>
