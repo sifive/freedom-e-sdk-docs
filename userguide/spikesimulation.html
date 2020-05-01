@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Simulating with Spike &#8212; Freedom E SDK v20.05.RC.02 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Simulating with QEMU" href="qemusimulation.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="simulating-with-spike">
+<h1>Simulating with Spike<a class="headerlink" href="#simulating-with-spike" title="Permalink to this headline">¶</a></h1>
+<p>Freedom E SDK comes with a target for simulating the RISC-V ISA with Spike:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>spike</p></li>
+</ul>
+</div></blockquote>
+<div class="section" id="building-for-spike">
+<h2>Building for Spike<a class="headerlink" href="#building-for-spike" title="Permalink to this headline">¶</a></h2>
+<p>Compiling a bare-metal RISC-V program for Spike is much the same as any other
+target in Freedom E SDK</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make <span class="nv">TARGET</span><span class="o">=</span>spike <span class="nv">PROGRAM</span><span class="o">=</span>hello <span class="nv">CONFIGURATION</span><span class="o">=</span>debug software
+</pre></div>
+</div>
+<p>One can choose to replace the <code class="docutils literal notranslate"><span class="pre">hello</span></code> PROGRAM with any other examples,
+like <code class="docutils literal notranslate"><span class="pre">timer-interrupt</span></code> example, and the <code class="docutils literal notranslate"><span class="pre">debug</span></code> build CONFIGRATION
+with the <code class="docutils literal notranslate"><span class="pre">release</span></code> for an optimize build configuration.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make <span class="nv">PROGRAM</span><span class="o">=</span>timer-interrupt <span class="nv">TARGET</span><span class="o">=</span>spike <span class="nv">CONFIGURATION</span><span class="o">=</span>release software
+</pre></div>
+</div>
+</div>
+<div class="section" id="changing-the-spike-simulation-target">
+<h2>Changing the Spike Simulation Target<a class="headerlink" href="#changing-the-spike-simulation-target" title="Permalink to this headline">¶</a></h2>
+<p>Spike accepts various options to configure the simulation target, like ISA, the
+number of harts, and more. You can configure these options by editing
+<code class="docutils literal notranslate"><span class="pre">bsp/spike/spike_options.sh</span></code> and adding your options to the exported
+<code class="docutils literal notranslate"><span class="pre">SPIKE_OPTIONS</span></code> variable.</p>
+<p>Editing these options usually requires regenerating the BSP files using
+freedom-devicetree-tools, so if you edit <code class="docutils literal notranslate"><span class="pre">SPIKE_OPTIONS</span></code>, make sure that
+the freedom-devicetree-tools submodule has been built and its output binaries
+are in your <code class="docutils literal notranslate"><span class="pre">PATH</span></code>.</p>
+</div>
+<div class="section" id="running-in-spike-simulation">
+<h2>Running in Spike Simulation<a class="headerlink" href="#running-in-spike-simulation" title="Permalink to this headline">¶</a></h2>
+<p>With the Spike simulator in your <code class="docutils literal notranslate"><span class="pre">PATH</span></code>, running a program in spike is as
+easy as invoking the <code class="docutils literal notranslate"><span class="pre">simulate</span></code> make target:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make <span class="nv">TARGET</span><span class="o">=</span>spike <span class="nv">PROGRAM</span><span class="o">=</span>hello <span class="nv">CONFIGURATION</span><span class="o">=</span>debug simulate
+</pre></div>
+</div>
+</div>
+<div class="section" id="cleaning-a-target-program-build-directory">
+<h2>Cleaning a Target Program Build Directory<a class="headerlink" href="#cleaning-a-target-program-build-directory" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">clean</span></code> target can be used to restore a target program’s directory to a clean state.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make <span class="nv">TARGET</span><span class="o">=</span>spike <span class="nv">PROGRAM</span><span class="o">=</span>hello <span class="nv">CONFIGURATION</span><span class="o">=</span>debug clean
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Freedom E SDK</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../contents.html">Contents of the SDK</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../userguide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="installing.html">Installing Freedom E SDK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="buildingdevboard.html">Building for a Dev Board or FPGA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standalone.html">Creating a Standalone Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qemusimulation.html">Simulating with QEMU</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Simulating with Spike</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../userguide.html">User Guide</a><ul>
+      <li>Previous: <a href="qemusimulation.html" title="previous chapter">Simulating with QEMU</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, SiFive Inc..
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/userguide/spikesimulation.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

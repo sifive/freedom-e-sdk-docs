@@ -1,18 +1,17 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Contents of the SDK &#8212; Freedom E SDK v201908 documentation</title>
+    <meta charset="utf-8" />
+    <title>Contents of the SDK &#8212; Freedom E SDK v20.05.RC.02 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="User Guide" href="userguide.html" />
@@ -40,36 +39,49 @@
 <p>Freedom E SDK comes packaged with the following board support packages under the
 <code class="docutils literal notranslate"><span class="pre">bsp/</span></code> directory.</p>
 <ul class="simple">
-<li><a class="reference external" href="https://www.sifive.com/boards/hifive1">SiFive HiFive 1</a><ul>
-<li>sifive-hifive1</li>
+<li><p><a class="reference external" href="https://www.sifive.com/boards/hifive1">SiFive HiFive 1</a></p>
+<ul>
+<li><p>sifive-hifive1</p></li>
 </ul>
 </li>
-<li><a class="reference external" href="https://www.sifive.com/boards/hifive1-rev-b">SiFive HiFive 1 Rev B</a><ul>
-<li>sifive-hifive1-revb</li>
+<li><p><a class="reference external" href="https://www.sifive.com/boards/hifive1-rev-b">SiFive HiFive 1 Rev B</a></p>
+<ul>
+<li><p>sifive-hifive1-revb</p></li>
 </ul>
 </li>
-<li><a class="reference external" href="https://www.sifive.com/boards/hifive-unleashed">SiFive HiFive Unleashed</a><ul>
-<li>sifive-hifive-unleashed</li>
+<li><p><a class="reference external" href="https://www.sifive.com/boards/hifive-unleashed">SiFive HiFive Unleashed</a></p>
+<ul>
+<li><p>sifive-hifive-unleashed</p></li>
 </ul>
 </li>
-<li><a class="reference external" href="https://github.com/sifive/freedom">SiFive Freedom E310 Arty</a><ul>
-<li>freedom-e310-arty</li>
+<li><p><a class="reference external" href="https://github.com/sifive/freedom">SiFive Freedom E310 Arty</a></p>
+<ul>
+<li><p>freedom-e310-arty</p></li>
 </ul>
 </li>
-<li><a class="reference external" href="https://github.com/sifive/freedom-tools">QEMU Emulation of the SiFive E31</a><ul>
-<li>qemu-sifive-e31</li>
+<li><p><a class="reference external" href="https://github.com/sifive/freedom-tools">QEMU Emulation of the SiFive E31</a></p>
+<ul>
+<li><p>qemu-sifive-e31</p></li>
 </ul>
 </li>
-<li><a class="reference external" href="https://github.com/sifive/freedom-tools">QEMU Emulation of the SiFive S51</a><ul>
-<li>qemu-sifive-s51</li>
+<li><p><a class="reference external" href="https://github.com/sifive/freedom-tools">QEMU Emulation of the SiFive S51</a></p>
+<ul>
+<li><p>qemu-sifive-s51</p></li>
 </ul>
 </li>
-<li><a class="reference external" href="https://github.com/sifive/freedom-tools">QEMU Emulation of the SiFive U54</a><ul>
-<li>qemu-sifive-u54</li>
+<li><p><a class="reference external" href="https://github.com/sifive/freedom-tools">QEMU Emulation of the SiFive U54</a></p>
+<ul>
+<li><p>qemu-sifive-u54</p></li>
 </ul>
 </li>
-<li><a class="reference external" href="https://github.com/sifive/freedom-tools">QEMU Emulation of the SiFive U54MC</a><ul>
-<li>qemu-sifive-u54mc</li>
+<li><p><a class="reference external" href="https://github.com/sifive/freedom-tools">QEMU Emulation of the SiFive U54MC</a></p>
+<ul>
+<li><p>qemu-sifive-u54mc</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://github.com/riscv/riscv-isa-sim">Spike RISC-V ISA EMulator</a></p>
+<ul>
+<li><p>spike</p></li>
 </ul>
 </li>
 </ul>
@@ -78,36 +90,54 @@ within a single target directory in <code class="docutils literal notranslate"><
 board support files for Freedom Metal are entirely within <code class="docutils literal notranslate"><span class="pre">bsp/sifive-hifive1/</span></code>
 and consist of the following:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">design.dts</span></code><ul>
-<li>The DeviceTree description of the target. This file is used to parameterize
+<li><p><code class="docutils literal notranslate"><span class="pre">core.dts</span></code></p>
+<ul>
+<li><p>The DeviceTree description of the target. This file is used to parameterize
 the Freedom Metal library to the target device. It is included as reference
 so that users of Freedom Metal are aware of what features and peripherals
-are available on the target.</li>
+are available on the target.</p></li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">metal.h</span></code><ul>
-<li>The Freedom Metal machine header which is used internally to Freedom Metal
-to instantiate structures to support the target device.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">design.dts</span></code></p>
+<ul>
+<li><p>The DeviceTree Overlay for describing the chosen node, and testrams.</p></li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">metal-platform.h</span></code><ul>
-<li>The Freedom Metal platform header which is used internally to Freedom Metal
+<li><p><code class="docutils literal notranslate"><span class="pre">design.svd</span></code></p>
+<ul>
+<li><p>CMSIS SVD XML file used for describing the design peripherals, their
+registers register-fields in the device with offset information on where
+they are all mapped into the memory space.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">metal.h</span></code></p>
+<ul>
+<li><p>The Freedom Metal machine header which is used internally to Freedom Metal
+to instantiate structures to support the target device.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">metal-platform.h</span></code></p>
+<ul>
+<li><p>The Freedom Metal platform header which is used internally to Freedom Metal
 as the source for each device’s memory-mapped base address, memory-mapped
-size, properties, and memory-mapped register offsets.</li>
+size, properties, and memory-mapped register offsets.</p></li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">metal.%.lds</span></code><ul>
-<li>Linker scripts for the target device. Scripts other than <code class="docutils literal notranslate"><span class="pre">metal.default.lds</span></code>
-are used for alternative memory layouts.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">metal.%.lds</span></code></p>
+<ul>
+<li><p>Linker scripts for the target device. Scripts other than <code class="docutils literal notranslate"><span class="pre">metal.default.lds</span></code>
+are used for alternative memory layouts.</p></li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">openocd.cfg</span></code> (for development board and FPGA targets)<ul>
-<li>Used to configure OpenOCD for flashing and debugging the target device.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">openocd.cfg</span></code> (for development board and FPGA targets)</p>
+<ul>
+<li><p>Used to configure OpenOCD for flashing and debugging the target device.</p></li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">settings.mk</span></code><ul>
-<li>Used to set <code class="docutils literal notranslate"><span class="pre">-march</span></code> and <code class="docutils literal notranslate"><span class="pre">-mabi</span></code> arguments to the RISC-V GNU Toolchain
-as well as configure target-specific build steps.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">settings.mk</span></code></p>
+<ul>
+<li><p>Used to set <code class="docutils literal notranslate"><span class="pre">-march</span></code> and <code class="docutils literal notranslate"><span class="pre">-mabi</span></code> arguments to the RISC-V GNU Toolchain
+as well as configure target-specific build steps.</p></li>
 </ul>
 </li>
 </ul>
@@ -128,106 +158,220 @@ SDK examples to be portable to all supported SiFive targets.</p>
 <div class="section" id="example-programs">
 <h2>Example Programs<a class="headerlink" href="#example-programs" title="Permalink to this headline">¶</a></h2>
 <p>The example programs can be found under the <code class="docutils literal notranslate"><span class="pre">software/</span></code> directory.</p>
+<ul>
+<li><p>atomics</p>
 <ul class="simple">
-<li>empty<ul>
-<li>An empty project. Serves as a good starting point for your own program.</li>
+<li><p>Demonstrates how to use the Metal Atomic API to leverage the RISC-V atomic
+instruction set.</p></li>
 </ul>
 </li>
-<li>hello<ul>
-<li>Prints “Hello, World!” to stdout, if a serial device is present on the target.</li>
+<li><p>cflush</p>
+<ul class="simple">
+<li><p>A simple example demo how to use cflush (Data) L1 and use FENCE to ensure flush
+complete.</p></li>
 </ul>
 </li>
-<li>sifive-welcome<ul>
-<li>Prints a welcome message and interacts with the LEDs.</li>
+<li><p>clic-hardware-vector-interrupts</p>
+<ul class="simple">
+<li><p>A simple example demonstrating the use of CLIC hardware vector interrupts</p></li>
 </ul>
 </li>
-<li>return-pass<ul>
-<li>Returns status code 0 indicating program success.</li>
+<li><p>clic-nested-interrupts</p>
+<ul class="simple">
+<li><p>A simple example demonstrating how to use CLIC preemptive vector interrupts</p></li>
 </ul>
 </li>
-<li>return-fail<ul>
-<li>Returns status code 1 indicating program failure.</li>
+<li><p>clic-nonvector-interrupts</p>
+<ul class="simple">
+<li><p>A simple example demonstrating how to use CLIC non vector interrupts</p></li>
 </ul>
 </li>
-<li>example-itim<ul>
-<li>Demonstrates how to statically link application code into the Instruction
-Tightly Integrated Memory (ITIM) if an ITIM is present on the target.</li>
+<li><p>clic-selective-vector-interrupts</p>
+<ul class="simple">
+<li><p>A simple example demonstrating how to use CLIC selective vector interrupts</p></li>
 </ul>
 </li>
-<li>software-interrupt<ul>
-<li>Demonstrates how to register a handler for and trigger a software interrupt</li>
+<li><p>coremark</p>
+<ul class="simple">
+<li><p>“CoreMark” Benchmark Program that measures the performance of embedded
+microcrontrollers (MCU)</p></li>
 </ul>
 </li>
-<li>timer-interrupt<ul>
-<li>Demonstrates how to register a handler for and trigger a timer interrupt</li>
+<li><p>csr</p>
+<ul class="simple">
+<li><p>A simple example demonstrating the use of metal APIs for CSR register set
+and get.</p></li>
 </ul>
 </li>
-<li>local-interrupt<ul>
-<li>Demonstrates how to register a handler for and trigger a local interrupt</li>
+<li><p>dhrystone</p>
+<ul class="simple">
+<li><p>“Dhrystone” Benchmark Program by Reinhold P. Weicker</p></li>
 </ul>
 </li>
-<li>example-pmp<ul>
-<li>Demonstrates how to configure a Physical Memory Protection (PMP) region</li>
+<li><p>empty</p>
+<ul class="simple">
+<li><p>An empty project. Serves as a good starting point for your own program.</p></li>
 </ul>
 </li>
-<li>example-spi<ul>
-<li>Demonstrates how to use the SPI API to transfer bytes to a peripheral</li>
+<li><p>example-buserror</p>
+<ul class="simple">
+<li><p>Demonstrates how to use the SiFive Bus Error Unit in Freedom Metal</p></li>
 </ul>
 </li>
-<li>dhrystone<ul>
-<li>“Dhrystone” Benchmark Program by Reinhold P. Weicker</li>
+<li><p>example-freertos-blinky</p>
+<ul class="simple">
+<li><p>A simple blinky starter application create just two tasks, one queue</p></li>
 </ul>
 </li>
-<li>coremark<ul>
-<li>“CoreMark” Benchmark Program that measures the performance of embedded
-microcrontrollers (MCU)</li>
+<li><p>example-freertos-blinky-systemview</p>
+<ul class="simple">
+<li><p>A simple blinky starter application create just two tasks, one queue
+(based on example-freertos-blinky example) in addition this example
+init and use the SEGGER sytemView trace.</p></li>
 </ul>
 </li>
-<li>cflush<ul>
-<li>A simple example demo how to use cflush (Data) L1 and use FENCE to ensure flush
-complete.</li>
+<li><p>example-freertos-minimal</p>
+<ul class="simple">
+<li><p>A simple starter example application to start FreeRTOS application</p></li>
 </ul>
 </li>
-<li>example-rtc<ul>
-<li>Demonstrates how to use the RTC API to start a Real-Time Clock, set a compare
-value, and handle an interrupt when the clock matches the compare value.</li>
+<li><p>example-freertos-pmp-blinky</p>
+<ul class="simple">
+<li><p>A simple blinky starter application create just two tasks, one queue.
+In this example we use the PMP in order to restrict the acces to peripheral,
+in order to access to global variable we grant access to bss to each task.</p></li>
 </ul>
 </li>
-<li>example-watchdog<ul>
-<li>Demonstrates how to use the Watchdog API to set a watchdog timer to trigger an
-interrupt on timeout.</li>
+<li><p>example-i2c</p>
+<ul class="simple">
+<li><p>Demonstrates usage of the I2C API to communicate with I2C slaves.</p></li>
 </ul>
 </li>
-<li>example-user-mode<ul>
-<li>Demonstrates how to drop to user mode privilege level.</li>
+<li><p>example-itim</p>
+<ul class="simple">
+<li><p>Demonstrates how to statically link application code into the Instruction
+Tightly Integrated Memory (ITIM) if an ITIM is present on the target.</p></li>
 </ul>
 </li>
-<li>example-user-syscall<ul>
-<li>Demonstrates how to register a handler for the “syscall from user mode” exception,
-drop to the user mode privilege level, and then issue a syscall.</li>
+<li><p>example-pmp</p>
+<ul class="simple">
+<li><p>Demonstrates how to configure a Physical Memory Protection (PMP) region</p></li>
 </ul>
 </li>
-<li>plic-interrupts<ul>
-<li>A simple example demonstrating how PLIC interrupts get uses on an Arty board.</li>
+<li><p>example-pwm</p>
+<ul class="simple">
+<li><p>Demonstrates usage of the PWM API for waveform generation.</p></li>
 </ul>
 </li>
-<li>test-coreip<ul>
-<li>Assembly test code which executes instructions and checks for expected results.
+<li><p>example-rtc</p>
+<ul class="simple">
+<li><p>Demonstrates how to use the RTC API to start a Real-Time Clock, set a compare
+value, and handle an interrupt when the clock matches the compare value.</p></li>
+</ul>
+</li>
+<li><p>example-spi</p>
+<ul class="simple">
+<li><p>Demonstrates how to use the SPI API to transfer bytes to a peripheral</p></li>
+</ul>
+</li>
+<li><p>example-watchdog</p>
+<ul class="simple">
+<li><p>Demonstrates how to use the Watchdog API to set a watchdog timer to trigger an
+interrupt on timeout.</p></li>
+</ul>
+</li>
+<li><p>example-user-mode</p>
+<ul class="simple">
+<li><p>Demonstrates how to drop to user mode privilege level.</p></li>
+</ul>
+</li>
+<li><p>example-user-syscall</p>
+<ul class="simple">
+<li><p>Demonstrates how to register a handler for the “syscall from user mode” exception,
+drop to the user mode privilege level, and then issue a syscall.</p></li>
+</ul>
+</li>
+<li><p>example-watchdog</p>
+<ul class="simple">
+<li><p>Demonstrates how to use the Watchdog API to set a watchdog timer to trigger an
+interrupt on timeout.</p></li>
+</ul>
+</li>
+<li><p>hello</p>
+<ul class="simple">
+<li><p>Prints “Hello, World!” to stdout, if a serial device is present on the target.</p></li>
+</ul>
+</li>
+<li><p>local-interrupt</p>
+<ul class="simple">
+<li><p>Demonstrates how to register a handler for and trigger a local interrupt</p></li>
+</ul>
+</li>
+<li><p>local-vector-interrupt</p>
+<ul class="simple">
+<li><p>A simple example using “Timer and Software Interrupts” in CLINT vector mode.</p></li>
+</ul>
+</li>
+<li><p>mem-latency</p>
+<ul class="simple">
+<li><p>A memory test that measure the latency at different cache layers and memory blocks</p></li>
+</ul>
+</li>
+<li><p>minimal-boot</p>
+<ul class="simple">
+<li><p>Demonstrates how to replace the Metal constructors and replace them with your own.</p></li>
+</ul>
+</li>
+<li><p>multicore-hello</p>
+<ul class="simple">
+<li><p>An example which demonstrates how to run code on multiple CPU harts and to use
+the Metal Lock API to use a spinlock as a mutex.</p></li>
+</ul>
+</li>
+<li><p>plic-interrupts</p>
+<ul class="simple">
+<li><p>A simple example demonstrating how PLIC interrupts get uses on an Arty board.</p></li>
+</ul>
+</li>
+<li><p>return-fail</p>
+<ul class="simple">
+<li><p>Returns status code 1 indicating program failure.</p></li>
+</ul>
+</li>
+<li><p>return-pass</p>
+<ul class="simple">
+<li><p>Returns status code 0 indicating program success.</p></li>
+</ul>
+</li>
+<li><p>sifive-welcome</p>
+<ul class="simple">
+<li><p>Prints a welcome message and interacts with the LEDs.</p></li>
+</ul>
+</li>
+<li><p>software-interrupt</p>
+<ul class="simple">
+<li><p>Demonstrates how to register a handler for and trigger a software interrupt</p></li>
+</ul>
+</li>
+<li><p>test-coreip</p>
+<ul class="simple">
+<li><p>Assembly test code which executes instructions and checks for expected results.
 The tests are designed to work on SiFive CPU designs in RTL simulation or on the
-Arty FPGA board.</li>
+Arty FPGA board.</p></li>
 </ul>
 </li>
-<li>clic-vector-interrupts<ul>
-<li>A simple example demonstrating how to use CLIC non vector interrupts</li>
+<li><p>timer-interrupt</p>
+<ul class="simple">
+<li><p>Demonstrates how to register a handler for and trigger a timer interrupt</p></li>
 </ul>
 </li>
-<li>clic-selective-vector-interrupts<ul>
-<li>A simple example demonstrating how to use CLIC selective vector interrupts</li>
+<li><p>uart-interrupt</p>
+<ul class="simple">
+<li><p>A simple “UART Interrupt” example using metal-interrupts APIs for ARTY board.</p></li>
 </ul>
 </li>
-<li>clic-hardware-vector-interrupts<ul>
-<li>A simple example demonstrating the use of CLIC hardware vector interrupts</li>
-</ul>
+<li><p>example-hpm</p>
+<p>-Demonstrates usage of the RISC-V hardware performance counter APIs.</p>
 </li>
 </ul>
 </div>
@@ -270,17 +414,15 @@ Arty FPGA board.</li>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -289,8 +431,8 @@ Arty FPGA board.</li>
       &copy;2019, SiFive Inc..
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
       <a href="_sources/contents.rst.txt"
